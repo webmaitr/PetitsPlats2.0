@@ -1,0 +1,202 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ededed;
+  margin: 0;
+  
+}
+
+header {
+  position: relative;
+  height: 667px;
+  background-image: url("assets/background-dish.jpg");
+  background-size: cover;
+  background-position-y: 75%;
+  padding: 51px 69px;
+  
+  justify-items: center;
+}
+
+.logo { 
+  width: 207px;
+  position: absolute;
+  left: 0;
+  margin-left: 69px;
+}
+
+h1 {
+  font-family : "Anton", serif;
+  font-weight: 400;
+  font-size: 44px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #FFD15B;
+  margin-top: 194px;
+  width: 700px;
+  
+}
+
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  width: 954px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 11px;;
+}
+
+.search-container:hover,
+.search-container input:hover {
+  cursor: pointer;
+}
+
+.search-container svg rect {
+  fill: #1B1B1B;
+  transition: fill 500ms;
+}
+
+.search-container svg:hover rect {
+  fill: #FFD15B;
+}
+
+.search-container svg circle,
+.search-container svg line {
+  stroke: white;
+  transition: stroke 500ms;
+}
+
+.search-container svg:hover circle,
+.search-container svg:hover line {
+  stroke: black;
+}
+
+#search-field {
+  border: none;
+  margin-left: 25px;
+  width: 100%;
+  font-family: "Manrope", serif;
+  font-size: 16px;
+  color: #7a7a7a;
+}
+
+main {
+  margin: 21px 100px;
+  
+}
+
+.kw-search-band {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nb-recettes {
+  font-family: "Anton", serif;
+  font-weight: 400;
+  font-size: 21px;
+  margin: 0;
+}
+
+.select {
+  display: flex;
+  gap: 65px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  
+}
+
+.select img {
+  width: 13px;
+  margin-left: 63px;
+}
+
+.select li {
+  background-color: white;
+  padding: 17px 16px;
+  border-radius: 11px;
+  font-family: "Manrope", serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.recipes-display {
+  margin-top: 55px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.recipes-display article {
+  max-width: 30%;
+  background-color: white;
+  border-radius: 21px;
+  overflow: hidden;
+  flex: 1 0 30%;
+  margin-bottom: 68px;
+}
+
+.recipes-display article img {
+  width: 100%;
+  height: 253px;
+  object-fit: cover;
+}
+
+.recipes-display article div {
+  padding: 10px 25px;
+}
+
+.recipes-display h2 {
+  font-family: "Anton", serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.recipes-display h3 {
+  font-family: "Manrope", serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #7A7A7A;
+  letter-spacing: 1px;
+  margin-top: 30px;
+}
+
+.recipes-display p {
+  font-family: "Manrope", serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.recipes-display ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin-bottom: 51px;
+}
+
+.recipes-display ul li {
+  flex: 1 0 50%;
+  margin-bottom: 20px;
+}
+
+.recipes-display ul li p {
+  margin: 0;
+  font-family: "Manrope", serif;
+  font-size: 14px;
+}
+
+.recipes-display ul li p:first-of-type {
+  
+  font-weight: 500;
+}
+
+.recipes-display ul li p:last-of-type {
+
+  font-weight: 400;
+  color: #7A7A7A;
+}

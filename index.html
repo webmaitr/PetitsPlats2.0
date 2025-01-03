@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accueil - les petits plats</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <header>
+    <img class="logo" src="assets/logo.svg" alt="logo les trois petits plats">
+    <h1>Cherchez parmi plus de 1500 recettes du quotidien, simples et délicieuses</h1>
+    
+    <div class="search-container">
+      <!-- <label for="main-search">recherche</label> -->
+      <input id="search-field" type="search" name="main-search" placeholder="Rechercher une recette, un ingrédient, ...">
+      <svg width="51" height="52" viewBox="0 0 51 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="51" height="52" rx="10" fill="#1B1B1B"/>
+        <circle cx="22" cy="22" r="9.5" stroke="white"/>
+        <line x1="30.3536" y1="30.6464" x2="39.3536" y2="39.6464" stroke="white"/>
+      </svg>
+    </div>
+  </header>
+  <main>
+    <div class="kw-search-band">
+      <p class="nb-recettes">recettes</p>
+ 
+
+          <ul class="select">
+            <li tabindex="0">Ingrédients <span><img src="assets/icons/chevron-down.svg" alt=""></span></li>
+            <li tabindex="0">Appareils<span><img src="assets/icons/chevron-down.svg" alt=""></span></li>
+            <li tabindex="0">Ustensiles<span><img src="assets/icons/chevron-down.svg" alt=""></span></li>
+          </ul>
+    </div>
+    <div class="recipes-display"></div>
+  </main>
+  <script type="module" src="scripts/main.js"></script>
+</body>
+</html>
