@@ -52,23 +52,23 @@ h1 {
   cursor: pointer;
 }
 
-.search-container svg rect {
+#search-lens rect {
   fill: #1B1B1B;
   transition: fill 500ms;
 }
 
-.search-container svg:hover rect {
+#search-lens:hover rect {
   fill: #FFD15B;
 }
 
-.search-container svg circle,
-.search-container svg line {
+#search-lens circle,
+#search-lens line {
   stroke: white;
   transition: stroke 500ms;
 }
 
-.search-container svg:hover circle,
-.search-container svg:hover line {
+#search-lens:hover circle,
+#search-lens:hover line {
   stroke: black;
 }
 
@@ -79,6 +79,15 @@ h1 {
   font-family: "Manrope", serif;
   font-size: 16px;
   color: #7a7a7a;
+}
+
+header p {
+  font-family: "Manrope", serif;
+  font-size: 16px;
+  font-weight: 700;
+  color : red;
+  margin-left:15%;
+  justify-self: left;
 }
 
 main {
@@ -127,7 +136,7 @@ main {
   margin-top: 55px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  gap: 66px 5%;
 }
 
 .recipes-display article {
@@ -136,7 +145,6 @@ main {
   border-radius: 21px;
   overflow: hidden;
   flex: 1 0 30%;
-  margin-bottom: 68px;
 }
 
 .recipes-display article img {
