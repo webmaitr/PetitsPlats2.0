@@ -1,20 +1,17 @@
-const newList = [];
+
+export function mainSearch (listOfRecipes) {
+  //check if input
+  const userInput = getUserInput();
+  let mainSearchList;
+  if (userInput) {
+      mainSearchList = launchSearch(userInput, listOfRecipes);
+    } 
+    return mainSearchList;
+}
 
 
 
-
-//set event listener
-export function setSearch(list){
-    newList.splice(0);
-    const userInput = getUserInput();
-    if (userInput) {
-      launchSearch(userInput, list);
-      return newList;
-    }
-  };
-    
-
-
+//display error message if input less than 3 letters
 function displayMessage (){
   const message = document.createElement('p');
   message.innerText = "Veuillez entrer au moins trois caractères";
@@ -22,6 +19,7 @@ function displayMessage (){
   searchContainer.parentElement.appendChild(message);
 }
 
+//delete error message
 function deleteMessage (){
   const header = document.querySelector('header');
   const message = document.querySelector('header p');
@@ -34,21 +32,19 @@ function deleteMessage (){
 function getUserInput() {
   deleteMessage();
   const searchField = document.getElementById('search-field');
-  const userSearch = searchField.value;
-  if (userSearch.length >= 3) {
-    console.log(userSearch);
+  const userInput = searchField.value;
+  if (userInput.length >= 3) {
+    console.log(userInput);
   } else {
     displayMessage();
     return;
   }
-  return userSearch
+  return userInput
 }
 
 
 function launchSearch(userInput, initialList) {
- 
-  
-  console.log(userInput);
+  const newList=[]
   for (let i=0 ; i<initialList.length ; i++) {
     let titre = initialList[i].name;
     let descript = initialList[i].description;
@@ -57,7 +53,9 @@ function launchSearch(userInput, initialList) {
     newList.push(initialList[i]); 
     }  
   }
-  // console.log(newList);
+
+  return newList;
+
 }
 
 

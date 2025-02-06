@@ -392,7 +392,7 @@ export const recipes = [
                 "unit": "tranches"
             }, 
             {
-                "ingredient": "Pommes",
+                "ingredient": "Pomme",
                 "quantity": 1
             },
             {
@@ -421,7 +421,7 @@ export const recipes = [
                 "unit": "grammes"
             },
             {
-                "ingredient": "Pommes",
+                "ingredient": "Pomme",
                 "quantity": 8
             },
             {
@@ -585,7 +585,7 @@ export const recipes = [
                 "unit":"tiges"
             },
             {
-                "ingredient": "huile d'olives",
+                "ingredient": "huile d'olive",
                 "quantity": 2,
                 "unit": "cuillère à soupe"
             }
@@ -934,7 +934,7 @@ export const recipes = [
                 "quantity": 1
             },
             {
-                "ingredient": "Huile d'olives"
+                "ingredient": "Huile d'olive"
             },
             {
                 "ingredient": "Oignon",
@@ -1318,7 +1318,7 @@ export const recipes = [
                 "unit": "grammes"
             },
             {
-                "ingredient": "Huile d'olives",
+                "ingredient": "Huile d'olive",
                 "quantity": 25,
                 "unit": "cl"
             },
@@ -1327,7 +1327,7 @@ export const recipes = [
                 "quantity": 1
             },
             {
-                "ingredient": "Coulis de tomates",
+                "ingredient": "Coulis de tomate",
                 "quantity": 20,
                 "unit": "cl"
             },
@@ -1710,11 +1710,11 @@ export const recipes = [
         "servings": 4,
         "ingredients": [
             {
-                "ingredient": "Bananes",
+                "ingredient": "Banane",
                 "quantity": 2
             },
             {
-                "ingredient": "Kiwis",
+                "ingredient": "Kiwi",
                 "quantity": 3
             },
             {
