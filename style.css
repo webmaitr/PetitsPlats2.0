@@ -4,8 +4,8 @@
 
 body {
   background-color: #ededed;
-  margin: 0;
-  
+  margin: 0 auto;
+  max-width: 1440px;
 }
 
 header {
@@ -41,7 +41,8 @@ h1 {
 .search-container {
   display: flex;
   justify-content: space-between;
-  width: 954px;
+  max-width: 954px;
+  width: min(954px, 80vw);
   background-color: white;
   padding: 10px;
   border-radius: 11px;;
@@ -91,7 +92,7 @@ header p {
 }
 
 main {
-  margin: 21px 100px;
+  margin: 21px auto;
 }
 
 /* middle page band */
@@ -99,17 +100,16 @@ main {
 
 .kw-search-band {
   display: flex;
+  gap: 0 5vw;
   position: relative;
-  align-items: baseline;
-  justify-content: flex-start;
+  margin: 0 7vw;
 }
 
 .nb-recettes {
   font-family: "Anton", serif;
   font-weight: 400;
   font-size: 21px;
-  position: absolute;
-  right: 0%
+  margin-left: auto;
 }
 
 /* drop-down selection list */
@@ -124,7 +124,7 @@ main {
 .select {
   display: flex;
   flex-direction: column;
-  margin-right: 66px;
+
 
 }
 
@@ -137,7 +137,7 @@ main {
   padding: 17px 16px;
   font-size: 16px;
   font-weight: 500;
-  min-width: 195px;
+  width: max(14vw, 140px);
   display: flex;
   justify-content: space-between;
   cursor: pointer;
@@ -222,13 +222,14 @@ li .search input {
   display: flex;
   flex-wrap: wrap;
   gap: 66px 5%;
-  margin-top: 40px;
+  margin: 40px 7vw;
 }
 
 .recipes-display article {
   position: relative;
   z-index: 1;
-  max-width: 30%;
+  min-width: 250px;
+
   background-color: white;
   border-radius: 21px;
   overflow: hidden;
@@ -305,4 +306,38 @@ li .search input {
 
   font-weight: 400;
   color: #7A7A7A;
+}
+
+@media (max-width: 850px) {
+  h1 {
+    width: 80vw;
+    font-size: 34px;
+    margin-top: 20vw;
+  }
+
+  header {
+    height: 567px;
+  }
+
+  .kw-search-band {
+    margin: 0 5vw;
+    flex-wrap: wrap;
+  }
+
+  .recipes-display {
+    margin: 30px 5vw;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+
+  }
+  .search-container {
+    width: 100vw;
+  }
+  header {
+    height: 50vh;
+  }
 }

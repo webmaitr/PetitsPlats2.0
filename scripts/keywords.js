@@ -80,12 +80,11 @@ export function displayKW(list, category) {
   }
     
   //init selection and display of keywords
-  // setKWStamp(category);
   setKWInputSearch(list);
 }
 
 
-// create and display the stamp of selected keyword
+// create and display the stamp of selected keyword and set icon for closing
 export function displayKWStamp(category, listItem) {
   const upperKWList = document.querySelector(`.${category}`);
   const stampIcon = document.createElement("img");
@@ -143,27 +142,11 @@ function setKWInputSearch () {
             listItemContent = listItemContent.toLowerCase();
             if (listItem.className !== "search" && listItemContent.includes(kwInput) === false) {
             listItem.className = "kwclosed";
-            console.log(listItem);
             }
           }
       } else {resetKWList(listKW)}
     })
   })
-}
-
-
-
-const countCategorySelected = function () {
-  let nbCategory = 0;
-  const ingred = document.querySelectorAll(".ingred>li");
-  const appli = document.querySelectorAll(".appar>li");
-  const ustens = document.querySelectorAll(".ustens>li");
-  if ((ingred.length > 2)) {nbCategory += 1};
-  if ((appli.length > 2)) {nbCategory += 1};
-  if ((ustens.length > 2)) {nbCategory += 1}; 
-
-  return nbCategory;
-
 }
 
 //check if we have keywords already selected
@@ -190,29 +173,26 @@ export function checkKW(listOfRecipes) {
       }
     }  
   } 
-
-  
   
   if (kWNodeList.length === 1)  {
     return newList;
   } else if (kWNodeList.length > 1){ 
   
-  let doublonList = [];
-  let nb = 0;
-  for (let i in newList) {
-    for (let j in newList) {
-      if (newList[i] === newList[j]) {
-      nb++;
-        if (nb === kWNodeList.length) {
-          console.log(kWNodeList.length)
-          console.log(newList[i]);
-          doublonList.push(newList[i]);
+    let doublonList = [];
+    let nb = 0;
+    for (let i in newList) {
+      for (let j in newList) {
+        if (newList[i] === newList[j]) {
+        nb++;
+          if (nb === kWNodeList.length) {
+            doublonList.push(newList[i]);
+          }
         }
       }
+      nb = 0;
     }
-    nb = 0;
-  }
-  const finalList = new Set(doublonList);
+  const preFinalList = new Set(doublonList);
+  const finalList = Array.from(preFinalList);
   return finalList;
   } else {
     return listOfRecipes;

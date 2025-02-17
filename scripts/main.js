@@ -53,26 +53,11 @@ function countRecipes () {
 const searchLens = document.getElementById('search-lens');
 
 function sortRecipes (list) {
-    const kWNodeList = document.querySelectorAll(".stamp");
-    resetRecipes();
-  if (searchLens.previousElementSibling.value === "") {
-    const listOfRecipes = displayRecipes(recipes);
-    const finalList = checkKW(listOfRecipes);
-    resetRecipes();
-    displayRecipes(finalList);
-    setKWStamp();
-    
-  } else {
-    const newList = mainSearch(list);
-    const listOfRecipes = displayRecipes(newList);
-    setKWStamp();
-     if (kWNodeList.length !== 0) {
-    const finalList = checkKW(listOfRecipes);
-    resetRecipes();
-    displayRecipes(finalList);
-    setKWStamp();
-    }
-  }
+      const newList = checkKW(list);
+      const finalList = mainSearch(newList);
+      resetRecipes();
+      displayRecipes(finalList);
+      setKWStamp();
 }
 
 function setMainSearch (list) {
@@ -81,15 +66,17 @@ function setMainSearch (list) {
   })
 }
 
-function closeStamp () {
-  const iconsClose = document.querySelectorAll(".stamp img");
-  iconsClose.forEach((iconClose) => {
-    iconClose.addEventListener("click", function () {
-      console.log("click");
+function closeStamp (category, item) {
+  const stampList = document.querySelectorAll(`.${category} .stamp`);
+  stampList.forEach((stamp) => {
+    if (stamp.innerText === item.innerText) {
+      const iconClose = stamp.querySelector("img");
+      iconClose.addEventListener("click", function (e) {
       const list = checkKW(recipes);
       sortRecipes(list);
       });
-  })
+    }
+  }) 
 }
 
 function setKWStamp () {
@@ -99,9 +86,11 @@ function setKWStamp () {
       if (listItem.className !== "search") {
         listItem.addEventListener("click", function (e) {
           const category = e.target.parentNode.parentNode.parentNode.className.slice(7);
+          //create and display the stamp from the chosen list element
           displayKWStamp(category, listItem);
+
           sortRecipes(recipes);
-          closeStamp();
+          closeStamp(category, listItem);
         })
       }
     }
@@ -113,6 +102,5 @@ displayRecipes(recipes);
 setMainSearch(recipes);
 setDropDownLists();
 setKWStamp();
-
 
 

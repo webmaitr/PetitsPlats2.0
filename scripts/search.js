@@ -5,16 +5,23 @@ export function mainSearch (listOfRecipes) {
   let mainSearchList;
   if (userInput) {
       mainSearchList = launchSearch(userInput, listOfRecipes);
-    } 
-    return mainSearchList;
+      if(mainSearchList.length === 0) {
+        displayMessage(`Auncune recette ne contient '${userInput}' vous pouvez chercher "tarte aux pommes", "poisson", etc.`);
+        return listOfRecipes;
+      };
+      return mainSearchList;
+  } else {
+    deleteMessage();
+    return listOfRecipes;
+  }
 }
 
 
 
 //display error message if input less than 3 letters
-function displayMessage (){
+function displayMessage (myMessage){
   const message = document.createElement('p');
-  message.innerText = "Veuillez entrer au moins trois caractères";
+  message.innerText = myMessage;
   const searchContainer = document.querySelector('.search-container');
   searchContainer.parentElement.appendChild(message);
 }
@@ -34,12 +41,11 @@ function getUserInput() {
   const searchField = document.getElementById('search-field');
   const userInput = searchField.value;
   if (userInput.length >= 3) {
-    console.log(userInput);
+    return userInput;
   } else {
-    displayMessage();
-    return;
+    displayMessage("Veuillez entrer au moins trois caractères");
+    return false;
   }
-  return userInput
 }
 
 
