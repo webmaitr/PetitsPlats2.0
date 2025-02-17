@@ -49,28 +49,42 @@ function getUserInput() {
 }
 
 
+// function launchSearch(userInput, initialList) {
+//   const newList=[]
+//   for (let i=0 ; i<initialList.length ; i++) {
+//     let titre = initialList[i].name;
+//     let descript = initialList[i].description;
+//     let allIngredients = sumIngredients(initialList[i]);
+//     if (titre.toLowerCase().includes(userInput.toLowerCase()) || descript.toLowerCase().includes(userInput.toLowerCase()) || allIngredients.toLowerCase().includes(userInput.toLowerCase()) ){
+//     newList.push(initialList[i]); 
+//     }  
+//   }
+//   return newList;
+// }
+
 function launchSearch(userInput, initialList) {
-  const newList=[]
-  for (let i=0 ; i<initialList.length ; i++) {
-    let titre = initialList[i].name;
-    let descript = initialList[i].description;
-    let allIngredients = sumIngredients(initialList[i]);
-    if (titre.toLowerCase().includes(userInput.toLowerCase()) || descript.toLowerCase().includes(userInput.toLowerCase()) || allIngredients.toLowerCase().includes(userInput.toLowerCase()) ){
-    newList.push(initialList[i]); 
-    }  
-  }
+  const newList = [];
+  initialList.forEach((recipe) => {
+    const firstList = Object.values(recipe);
+    const secondList = firstList[4].map(element => element.ingredient);
 
-  return newList;
-
-}
-
-
-
-function sumIngredients (recipe) {
-  let allIngredients ='';
-  for (let item of recipe.ingredients) {
-      allIngredients += (' ' + item.ingredient);
+    const finalString = firstList[2] + " " + firstList[6] + " " + secondList.join(" ");
+    console.log(finalString);
+    console.log(secondList);
+    if (finalString.toLowerCase().includes(userInput.toLowerCase())) {
+      newList.push(recipe);
     }
-  return allIngredients;
+  })
+  return newList;
 }
+
+
+
+// function sumIngredients (recipe) {
+//   let allIngredients ='';
+//   for (let item of recipe.ingredients) {
+//       allIngredients += (' ' + item.ingredient);
+//     }
+//   return allIngredients;
+// }
 
