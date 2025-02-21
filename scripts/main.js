@@ -71,7 +71,7 @@ function closeStamp (category, item) {
   stampList.forEach((stamp) => {
     if (stamp.innerText === item.innerText) {
       const iconClose = stamp.querySelector("img");
-      iconClose.addEventListener("click", function (e) {
+      iconClose.addEventListener("click", function () {
       const list = checkKW(recipes);
       sortRecipes(list);
       });

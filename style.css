@@ -8,6 +8,8 @@ body {
   max-width: 1440px;
 }
 
+label { display: none;}
+
 header {
   position: relative;
   height: 667px;
