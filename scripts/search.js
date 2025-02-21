@@ -69,8 +69,7 @@ function launchSearch(userInput, initialList) {
     const secondList = firstList[4].map(element => element.ingredient);
 
     const finalString = firstList[2] + " " + firstList[6] + " " + secondList.join(" ");
-    console.log(finalString);
-    console.log(secondList);
+
     if (finalString.toLowerCase().includes(userInput.toLowerCase())) {
       newList.push(recipe);
     }

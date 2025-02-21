@@ -8,6 +8,8 @@ body {
   max-width: 1440px;
 }
 
+label {display: none}
+
 header {
   position: relative;
   height: 667px;
@@ -15,7 +17,6 @@ header {
   background-size: cover;
   background-position-y: 75%;
   padding: 51px 69px;
-  
   justify-items: center;
 }
 
@@ -35,7 +36,6 @@ h1 {
   color: #FFD15B;
   margin-top: 194px;
   width: 700px;
-  
 }
 
 .search-container {
